@@ -1,4 +1,4 @@
-import PrintObject from './components/PrintObject.vue';
+import PrintObject from './components/PrintObject.js';
 
 module.exports = {
   install: function (Vue, options) {

@@ -58,7 +58,7 @@ module.exports = [
     }
   }),
   merge(config, {
-    entry: path.resolve(__dirname + '/../src/components/PrintObject.vue'),
+    entry: path.resolve(__dirname + '/../src/components/PrintObject.js'),
     output: {
       filename: 'vue-print-object.js',
       libraryTarget: 'umd',
