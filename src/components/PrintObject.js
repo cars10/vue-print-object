@@ -1,16 +1,25 @@
+import RenderObject from './RenderObject'
+
 export default {
   props: {
-    object: {
+    printableObject: {
       default: () => {
       }
     }
   },
+  components: {
+    RenderObject
+  },
   render: function (createElement) {
-    return createElement('div', [renderObject(createElement, this.object)])
+    return createElement('div', [
+      createElement('div', {class: 'bracket'}, '{'),
+      createElement('render-object', {props: {printableObject: this.printableObject}}),
+      createElement('div', {class: 'bracket'}, '}'),
+    ])
   }
 }
 
-function renderObject (createElement, object) {
+function printObject (createElement, object) {
   let body = Object.keys(object).map(key => {
     const value = object[key]
     switch (typeof value) {
@@ -18,7 +27,7 @@ function renderObject (createElement, object) {
         if (value === null) {
           return keyValue(createElement, key, 'null')
         } else {
-          return keyValue(createElement, key, [renderObject(createElement, value)])
+          return keyValue(createElement, key, [printObject(createElement, value)])
         }
       case 'array':
         break
@@ -36,7 +45,7 @@ function renderObject (createElement, object) {
 
 function objectWrapper (createElement, children) {
   return createElement('div', [
-    createElement('div', '{'),
+    createElement('div', {class: 'inline-block'}, '{'),
     createElement('div', {class: 'indent'}, children),
     createElement('div', '}')
   ])

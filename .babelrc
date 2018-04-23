@@ -3,7 +3,8 @@
     "es2015"
   ],
   "plugins": [
-    "transform-runtime"
+    "transform-runtime",
+    "syntax-dynamic-import"
   ],
   "comments": false
 }

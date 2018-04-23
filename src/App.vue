@@ -1,19 +1,79 @@
 <template>
   <div>
     <h1>Print object test</h1>
-    <print-object :object="simpleObject"></print-object>
+    <print-object :printableObject="simpleObject"></print-object>
     <hr>
-    <print-object :object="advancedObject"></print-object>
+    <print-object :printableObject="advancedObject"></print-object>
+    <hr>
+    <div>
+      <div class="bracket">{</div>
+      <div class="object">
+        <div class="kv">
+          <div class="key">"a":</div>
+          <div class="value">1</div>
+        </div>
+        <div class="kv">
+          <div class="key">"b":</div>
+          <div class="value">
+            <div class="bracket">{</div>
+            <div class="bracket">}</div>
+          </div>
+        </div>
+        <div class="kv">
+          <div class="key">"c":</div>
+          <div class="value">
+            <div class="bracket">{</div>
+            <div class="object">
+              <div class="kv">
+                <div class="key">"a":</div>
+                <div class="value">1</div>
+              </div>
+              <div class="kv">
+                <div class="key">"b":</div>
+                <div class="value">2</div>
+              </div>
+            </div>
+            <div class="bracket">}</div>
+          </div>
+        </div>
+      </div>
+      <div class="bracket">}</div>
+    </div>
   </div>
 </template>
 
 <style>
   * {
-    font-family: sans-serif;
+    font-family: monospace;
   }
 
-  .indent {
+  .object {
     padding-left: 1em;
+  }
+
+  .key, .value, .bracket {
+    display: inline-block;
+  }
+
+  .key {
+    vertical-align: top;
+    margin-right: 4px;
+  }
+
+  .value--number {
+    color: green
+  }
+
+  .value--string {
+    color: blue
+  }
+
+  .value--boolean {
+    color: red
+  }
+
+  .value--null {
+    color: purple
   }
 </style>
 
