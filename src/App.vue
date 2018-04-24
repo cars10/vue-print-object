@@ -61,11 +61,11 @@
   }
 
   .value--number {
-    color: green
+    color: blue
   }
 
   .value--string {
-    color: blue
+    color: green
   }
 
   .value--boolean {
@@ -74,6 +74,10 @@
 
   .value--null {
     color: purple
+  }
+
+  .kv {
+    color: black
   }
 </style>
 
@@ -84,7 +88,7 @@
     data: () => {
       return {
         simpleObject: {a: 1, b: 2},
-        advancedObject: {a: 1, b: {c: 2, d: [3, 4]}, e: 'someString', f: null, g: false}
+        advancedObject: {a: 1, b: {c: 2, d: [3, 4, {x: true, y: 42}]}, e: 'someString', f: null, g: false}
       }
     },
     components: {

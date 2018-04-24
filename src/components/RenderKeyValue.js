@@ -8,9 +8,11 @@ export default {
     RenderValue
   },
   render: function (createElement) {
-    return createElement('div', {class: 'kv'}, [
-      createElement('render-key', {props: {printableKey: this.printableKey}}),
-      createElement('render-value', {props: {printableValue: this.printableValue}})
-    ])
+    let children = []
+    if (this.printableKey)
+      children.push(createElement('render-key', {props: {printableKey: this.printableKey}}))
+    children.push(createElement('render-value', {props: {printableValue: this.printableValue}}))
+
+    return createElement('div', {class: 'kv'}, children)
   }
 }
