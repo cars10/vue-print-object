@@ -1,9 +1,9 @@
 <template>
   <div>
     <h1>Print object test</h1>
-    <print-object :printableObject="simpleObject"></print-object>
+    <print-object-old :printableObject="simpleObject"></print-object-old>
     <hr>
-    <print-object :printableObject="advancedObject"></print-object>
+    <print-object-old :printableObject="advancedObject"></print-object-old>
     <hr>
     <div>
       <div class="bracket">{</div>
@@ -91,7 +91,7 @@
 </style>
 
 <script>
-  import PrintObject from './components/PrintObject.js'
+  import PrintObjectOld from './components/PrintObjectOld.js'
 
   export default {
     data: () => {
@@ -101,7 +101,7 @@
       }
     },
     components: {
-      PrintObject
+      PrintObjectOld
     }
   }
 </script>
