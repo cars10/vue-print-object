@@ -79,6 +79,15 @@
   .kv {
     color: black
   }
+
+  .row {
+    padding-left: 1px;
+    border-left: 1px dotted #ddd;
+  }
+
+  .key:hover {
+
+  }
 </style>
 
 <script>
@@ -88,7 +97,7 @@
     data: () => {
       return {
         simpleObject: {a: 1, b: 2},
-        advancedObject: {a: 1, b: {c: 2, d: [3, 4, {x: true, y: 42}]}, e: 'someString', f: null, g: false}
+        advancedObject: {a: 1, b: {c: 2, d: [3, 4, {x: true, y: 42, z: [8, 9]}]}, e: 'someString', f: null, g: false, h: {}, i: []}
       }
     },
     components: {
