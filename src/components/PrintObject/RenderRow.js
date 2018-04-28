@@ -49,7 +49,7 @@ export default {
       const openingBracket = isArray ? '[' : '{'
       const closingBracket = isArray ? ']' : '}'
 
-      children.push(createElement('div', {class: 'bracket'}, openingBracket))
+      children.push(createElement('span', {class: 'bracket'}, openingBracket))
       if (this.objectCollapsed) {
         children.push(createElement('span', '...'))
       } else {
@@ -61,7 +61,7 @@ export default {
             }
           }))
       }
-      children.push(createElement('div', {class: 'bracket'}, closingBracket))
+      children.push(createElement('span', {class: 'bracket'}, closingBracket))
     } else {
       children.push(createElement('render-value', {props: {printableValue: this.printableValue}}))
     }

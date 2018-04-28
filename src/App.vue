@@ -13,12 +13,7 @@
     padding-left: 1em;
   }
 
-  .key, .value, .bracket {
-    display: inline-block;
-  }
-
   .key {
-    vertical-align: top;
     margin-right: 4px;
   }
 
