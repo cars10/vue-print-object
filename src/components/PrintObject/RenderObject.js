@@ -1,5 +1,5 @@
 export default {
-  props: ['printableObject', 'isArray'],
+  props: ['printableObject', 'isArray', 'collapsed'],
   components: {
     RenderRow: () => import('./RenderRow.js')
   },

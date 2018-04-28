@@ -47,8 +47,13 @@
     border-left: 1px dotted #ddd;
   }
 
-  .key:hover {
+  .key__object:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+  }
 
+  .object__hover {
+    background-color: lightgrey;
   }
 </style>
 
