@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'production'
+
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge');
@@ -58,7 +60,7 @@ module.exports = [
     }
   }),
   merge(config, {
-    entry: path.resolve(__dirname + '/../src/components/PrintObject.js'),
+    entry: path.resolve(__dirname + '/../src/components/PrintObject.vue'),
     output: {
       filename: 'vue-print-object.js',
       libraryTarget: 'umd',

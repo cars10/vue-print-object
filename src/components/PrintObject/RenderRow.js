@@ -66,6 +66,6 @@ export default {
       children.push(createElement('render-value', {props: {printableValue: this.printableValue}}))
     }
 
-    return createElement('div', {class: [{'object__hover': this.keyHover}, 'row']}, children)
+    return createElement('div', {class: [{'row__hover': this.keyHover}, 'row']}, children)
   }
 }

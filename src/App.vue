@@ -8,52 +8,10 @@
   * {
     font-family: monospace;
   }
-
-  .object {
-    padding-left: 1em;
-  }
-
-  .key {
-    margin-right: 4px;
-  }
-
-  .value--number {
-    color: blue
-  }
-
-  .value--string {
-    color: green
-  }
-
-  .value--boolean {
-    color: red
-  }
-
-  .value--null {
-    color: purple
-  }
-
-  .kv {
-    color: black
-  }
-
-  .row {
-    padding-left: 1px;
-    border-left: 1px dotted #ddd;
-  }
-
-  .key__object:hover {
-    background-color: lightgrey;
-    cursor: pointer;
-  }
-
-  .object__hover {
-    background-color: lightgrey;
-  }
 </style>
 
 <script>
-  import PrintObject from './components/PrintObject.js'
+  import PrintObject from './components/PrintObject.vue'
 
   export default {
     data: () => {
