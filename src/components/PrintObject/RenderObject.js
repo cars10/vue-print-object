@@ -14,6 +14,6 @@ export default {
       })
     })
 
-    return createElement('div', {class: 'object'}, children)
+    return createElement('div', {class: 'vpo-object'}, children)
   }
 }

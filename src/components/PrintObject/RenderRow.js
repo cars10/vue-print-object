@@ -39,7 +39,7 @@ export default {
         children.push(createElement('render-key', {
           nativeOn: {click: this.collapse, mouseenter: this.mouseenter, mouseleave: this.mouseleave},
           props: {printableKey: this.printableKey},
-          class: 'key__object'
+          class: 'vpo-key__object'
         }))
       } else {
         children.push(createElement('render-key', {props: {printableKey: this.printableKey}}))
@@ -66,6 +66,6 @@ export default {
       children.push(createElement('render-value', {props: {printableValue: this.printableValue}}))
     }
 
-    return createElement('div', {class: [{'row__hover': this.keyHover}, 'row']}, children)
+    return createElement('div', {class: [{'vpo-row__hover': this.keyHover}, 'vpo-row']}, children)
   }
 }

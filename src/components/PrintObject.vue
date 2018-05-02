@@ -5,40 +5,40 @@
 </template>
 
 <style>
-  .object {
+  .vpo-object {
     padding-left: 1em;
   }
 
-  .key {
+  .vpo-key {
     margin-right: 4px;
   }
 
-  .value--number {
+  .vpo-value--number {
     color: blue
   }
 
-  .value--string {
+  .vpo-value--string {
     color: green
   }
 
-  .value--boolean {
+  .vpo-value--boolean {
     color: red
   }
 
-  .value--null {
+  .vpo-value--null {
     color: purple
   }
 
-  .row {
+  .vpo-row {
     padding-left: 1px;
     border-left: 1px solid #ddd;
   }
 
-  .key__object:hover {
+  .vpo-key__object:hover {
     cursor: pointer;
   }
 
-  .row__hover {
+  .vpo-row__hover {
     background-color: lightgrey;
   }
 </style>

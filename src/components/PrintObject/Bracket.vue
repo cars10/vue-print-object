@@ -1,5 +1,5 @@
 <template>
-  <span v-html="bracket"></span>
+  <span v-html="bracket" class="vpo-bracket"></span>
 </template>
 
 <script>
