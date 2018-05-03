@@ -1,7 +1,7 @@
 import RenderKey from './RenderKey.vue'
 import RenderValue from './RenderValue.vue'
 import RenderObject from './RenderObject.vue'
-import Bracket from './Bracket.vue'
+import RenderBracket from './RenderBracket.vue'
 
 export default {
   props: ['printableKey', 'printableValue', 'isArray', 'isLast'],
@@ -15,11 +15,10 @@ export default {
     RenderKey,
     RenderValue,
     RenderObject,
-    Bracket
+    RenderBracket
   },
   methods: {
     collapse (e) {
-      e.preventDefault()
       this.objectCollapsed = !this.objectCollapsed
     },
     mouseenter () {
@@ -49,7 +48,7 @@ export default {
     if (valueIsObject) {
       const isArray = Array.isArray(this.printableValue)
 
-      children.push(createElement('bracket', {props: {isArray: isArray, isOpeningBracket: true}}))
+      children.push(createElement('render-bracket', {props: {isArray: isArray, isOpeningBracket: true}}))
       if (this.objectCollapsed) {
         children.push(createElement('span', '...'))
       } else {
@@ -61,7 +60,7 @@ export default {
             }
           }))
       }
-      children.push(createElement('bracket', {props: {isArray: isArray}}))
+      children.push(createElement('render-bracket', {props: {isArray: isArray}}))
     } else {
       children.push(createElement('render-value', {props: {printableValue: this.printableValue}}))
     }
