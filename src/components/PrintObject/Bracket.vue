@@ -1,5 +1,5 @@
 <template>
-  <span v-html="bracket" class="vpo-bracket"></span>
+  <span class="vpo-bracket">{{bracket}}</span>
 </template>
 
 <script>
@@ -17,7 +17,7 @@
         if (this.isOpeningBracket) {
           return this.isArray ? '[' : '{'
         } else {
-          return this.isArray ? ']' : '}'
+          return this.isArray ? '],' : '},'
         }
       }
     }
