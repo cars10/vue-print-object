@@ -1,6 +1,6 @@
 import RenderKey from './RenderKey.vue'
 import RenderValue from './RenderValue.vue'
-import RenderObject from './RenderObject.js'
+import RenderObject from './RenderObject.vue'
 import Bracket from './Bracket.vue'
 
 export default {
