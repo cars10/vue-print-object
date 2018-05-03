@@ -1,6 +1,6 @@
 <template>
   <span class="vpo-value">
-    <span :class="valueClass" v-html="value"></span><span>,</span>
+    <span :class="valueClass">{{value}}</span><span>,</span>
   </span>
 </template>
 
