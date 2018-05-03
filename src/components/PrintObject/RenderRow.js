@@ -1,5 +1,5 @@
 import RenderKey from './RenderKey.js'
-import RenderValue from './RenderValue.js'
+import RenderValue from './RenderValue.vue'
 import RenderObject from './RenderObject.js'
 import Bracket from './Bracket.vue'
 
