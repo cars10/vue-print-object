@@ -1,6 +1,6 @@
 <template>
   <div>
-    <render-row :printableValue="printableObject"></render-row>
+    <render-key-value :printableValue="printableObject"></render-key-value>
   </div>
 </template>
 
@@ -29,7 +29,7 @@
     color: purple
   }
 
-  .vpo-row {
+  .vpo-key-value {
     padding-left: 1px;
     border-left: 1px solid #ddd;
   }
@@ -38,13 +38,13 @@
     cursor: pointer;
   }
 
-  .vpo-row__hover {
+  .vpo-key-value__hover {
     background-color: lightgrey;
   }
 </style>
 
 <script>
-  import RenderRow from './PrintObject/RenderRow.js'
+  import RenderKeyValue from './PrintObject/RenderKeyValue.js'
 
   export default {
     props: {
@@ -54,7 +54,7 @@
       }
     },
     components: {
-      RenderRow
+      RenderKeyValue
     }
   }
 </script>

@@ -1,10 +1,10 @@
 <template>
   <div class="vpo-object">
-    <render-row v-for="key in Object.keys(printableObject)"
-                :key="key"
-                :printableKey="key"
-                :printableValue="printableObject[key]"
-                :isArray="isArray"></render-row>
+    <render-key-value v-for="key in Object.keys(printableObject)"
+                      :key="key"
+                      :printableKey="key"
+                      :printableValue="printableObject[key]"
+                      :isArray="isArray"></render-key-value>
   </div>
 </template>
 
@@ -12,7 +12,7 @@
   export default {
     props: ['printableObject', 'isArray'],
     components: {
-      RenderRow: () => import('./RenderRow.js')
+      RenderKeyValue: () => import('./RenderKeyValue.js')
     }
   }
 
