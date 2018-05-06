@@ -1,10 +1,14 @@
 <template>
-  <div>
+  <div class="vpo-wrapper">
     <render-key-value :printableValue="printableObject"></render-key-value>
   </div>
 </template>
 
 <style>
+  .vpo-wrapper {
+    display: inline-block;
+  }
+
   .vpo-object {
     padding-left: 1em;
   }
