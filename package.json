@@ -1,6 +1,6 @@
 {
   "name": "vue-print-object",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Component to print a javascript object",
   "main": "dist/vue-print-object.js",
   "scripts": {
