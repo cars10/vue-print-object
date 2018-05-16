@@ -10,14 +10,21 @@
       },
       isOpeningBracket: {
         default: false
+      },
+      noComma: {
+        default: false
       }
     },
     computed: {
-      bracket() {
+      bracket () {
         if (this.isOpeningBracket) {
           return this.isArray ? '[' : '{'
         } else {
-          return this.isArray ? '],' : '},'
+          if (this.noComma) {
+            return this.isArray ? ']' : '}'
+          } else {
+            return this.isArray ? '],' : '},'
+          }
         }
       }
     }

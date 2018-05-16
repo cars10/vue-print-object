@@ -1,6 +1,6 @@
 <template>
   <div class="vpo-wrapper">
-    <render-key-value :printableValue="printableObject"></render-key-value>
+    <render-key-value :printableValue="printableObject" :isLast="true"></render-key-value>
   </div>
 </template>
 

@@ -18,7 +18,7 @@ export default {
     RenderBracket
   },
   methods: {
-    collapse (e) {
+    collapse () {
       this.objectCollapsed = !this.objectCollapsed
     },
     mouseenter () {
@@ -60,7 +60,7 @@ export default {
             }
           }))
       }
-      children.push(createElement('render-bracket', {props: {isArray: isArray}}))
+      children.push(createElement('render-bracket', {props: {isArray: isArray, noComma: this.isLast}}))
     } else {
       children.push(createElement('render-value', {props: {printableValue: this.printableValue}}))
     }
