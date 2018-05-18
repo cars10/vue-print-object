@@ -4,7 +4,7 @@ import RenderObject from './RenderObject.vue'
 import RenderBracket from './RenderBracket.vue'
 
 export default {
-  props: ['printableKey', 'printableValue', 'isArray', 'isLast'],
+  props: ['printableKey', 'printableValue', 'isArray', 'isLastElement'],
   data () {
     return {
       objectCollapsed: false,
@@ -60,9 +60,9 @@ export default {
             }
           }))
       }
-      children.push(createElement('render-bracket', {props: {isArray: isArray, noComma: this.isLast}}))
+      children.push(createElement('render-bracket', {props: {isArray: isArray, isLastElement: this.isLastElement}}))
     } else {
-      children.push(createElement('render-value', {props: {printableValue: this.printableValue}}))
+      children.push(createElement('render-value', {props: {printableValue: this.printableValue, isLastElement: this.isLastElement}}))
     }
 
     return createElement('div', {class: [{'vpo-key-value__hover': this.keyHover}, 'vpo-key-value']}, children)

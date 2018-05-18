@@ -11,7 +11,7 @@
       isOpeningBracket: {
         default: false
       },
-      noComma: {
+      isLastElement: {
         default: false
       }
     },
@@ -20,7 +20,7 @@
         if (this.isOpeningBracket) {
           return this.isArray ? '[' : '{'
         } else {
-          if (this.noComma) {
+          if (this.isLastElement) {
             return this.isArray ? ']' : '}'
           } else {
             return this.isArray ? '],' : '},'

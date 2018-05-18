@@ -1,12 +1,12 @@
 <template>
   <span class="vpo-value">
-    <span :class="valueClass">{{value}}</span><span>,</span>
+    <span :class="valueClass">{{value}}</span><span v-if="!isLastElement">,</span>
   </span>
 </template>
 
 <script>
   export default {
-    props: ['printableValue'],
+    props: ['printableValue', 'isLastElement'],
     computed: {
       valueClass () {
         const valueType = typeof this.printableValue

@@ -4,7 +4,8 @@
                       :key="key"
                       :printableKey="key"
                       :printableValue="printableObject[key]"
-                      :isArray="isArray"></render-key-value>
+                      :isArray="isArray"
+                      :isLastElement="Object.keys(printableObject).pop() === key"></render-key-value>
   </div>
 </template>
 
