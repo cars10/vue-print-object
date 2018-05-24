@@ -1,10 +1,18 @@
 # vue-print-object
 
-> A component to print javascript objects
+> A component to print and collapse javascript objects
 
 [![npm version](https://badge.fury.io/js/vue-print-object.svg)](https://badge.fury.io/js/vue-print-object)
 
 ![Screenshot](screenshot.png)
+
+
+## Features
+
+* Print javascript objects
+* Highlighting of different types (number, string, boolean, etc)
+* Collapsible: collapse keys
+* Highlight of complete objects on hover
 
 
 ## Installation
