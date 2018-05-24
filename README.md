@@ -5,6 +5,7 @@
 [![npm version](https://badge.fury.io/js/vue-print-object.svg)](https://badge.fury.io/js/vue-print-object)
 
 ![Screenshot](screenshot.png)
+
 [Codepen](https://codepen.io/cars10/pen/yjWdQv)
 
 
