@@ -3,7 +3,7 @@
 > A component to print javascript objects
 
 [![npm version](https://badge.fury.io/js/vue-print-object.svg)](https://badge.fury.io/js/vue-print-object)
-![Screenshot](screenshot.png?raw=true "Screenshot")
+![Screenshot](screenshot.png)
 
 
 ## Installation
