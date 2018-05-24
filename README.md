@@ -5,6 +5,7 @@
 [![npm version](https://badge.fury.io/js/vue-print-object.svg)](https://badge.fury.io/js/vue-print-object)
 
 ![Screenshot](screenshot.png)
+[Codepen](https://codepen.io/cars10/pen/yjWdQv)
 
 
 ## Features
@@ -44,7 +45,7 @@ Loading the minified version will automatically register the component `VuePrint
 Import the component js and css (alternatively copy and customize the css):
 
 ```javascript
-import VuePrintObject from 'vue-print-object'
+import PrintObject from 'vue-print-object'
 ```
 
 ```javascript
@@ -55,12 +56,12 @@ Then load the component:
 
 ```javascript
 // globally
-Vue.use(VuePrintObject)
+Vue.use(PrintObject)
 
 // or in a component
 export default {
   components: {
-    VuePrintObject
+    PrintObject
   }
 }
 ```
@@ -68,7 +69,7 @@ export default {
 Finally use the component:
 
 ```html
-<vue-print-object :printableObject="myObject"></vue-print-object>
+<print-object :printableObject="myObject"></print-object>
 ```
 
 ```javascript
@@ -85,6 +86,7 @@ export default {
   }
 }
 ```
+[Codepen](https://codepen.io/cars10/pen/yjWdQv)
 
 ## License
 
