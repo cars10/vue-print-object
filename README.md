@@ -67,10 +67,11 @@ export default {
   data: () => {
     myObject: {
       a: 1,
-      b: 2,
+      b: "hello",
       c: {
         d: [3, 4]
-      }
+      },
+      e: false
     }
   }
 }

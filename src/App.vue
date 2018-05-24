@@ -1,13 +1,13 @@
 <template>
   <div>
-    <print-object :printableObject="advancedObject"></print-object>
+    <print-object :printableObject="myObject"></print-object>
   </div>
 </template>
 
 <style>
-  * {
-    font-family: monospace;
-  }
+* {
+  font-family: monospace;
+}
 </style>
 
 <script>
@@ -16,15 +16,13 @@
   export default {
     data: () => {
       return {
-        simpleObject: {a: 1, b: 2},
-        advancedObject: {
+        myObject: {
           a: 1,
-          b: {c: 2, d: [3, 4, {x: true, y: 42, z: [8, 9]}]},
-          e: 'someString',
-          f: null,
-          g: false,
-          h: {},
-          i: []
+          b: "hello",
+          c: {
+            d: [3, 4]
+          },
+          e: false
         }
       }
     },
