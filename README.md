@@ -18,17 +18,6 @@ npm install vue-print-object --save
 yarn add vue-print-object
 ```
 
-Then import the component js:
-
-```javascript
-import VuePrintObject from 'vue-print-object'
-```
-
-And the styles. Alternatively copy the styles to your project and customize them.
-
-```javascript
-import 'vue-print-object/dist/vue-print-object.css'
-```
 
 ### Or manually via `<script>` tag
 
@@ -43,13 +32,23 @@ Loading the minified version will automatically register the component `VuePrint
 
 ## Usage
 
-Load the component:
+Import the component js and css (alternatively copy and customize the css):
 
 ```javascript
-# globally
+import VuePrintObject from 'vue-print-object'
+```
+
+```javascript
+import 'vue-print-object/dist/vue-print-object.css'
+```
+
+Then load the component:
+
+```javascript
+// globally
 Vue.use(VuePrintObject)
 
-# or in a component
+// or in a component
 export default {
   components: {
     VuePrintObject
@@ -57,7 +56,7 @@ export default {
 }
 ```
 
-Use the component:
+Finally use the component:
 
 ```html
 <vue-print-object :printableObject="myObject"></vue-print-object>
