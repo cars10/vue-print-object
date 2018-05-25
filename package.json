@@ -1,10 +1,10 @@
 {
   "name": "vue-print-object",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Component to print a javascript object",
   "main": "dist/vue-print-object.js",
   "scripts": {
-    "build": "webpack --config ./build/webpack.prod.config.js",
+    "build": "rm -rf dist && NODE_ENV=production webpack --config ./build/webpack.prod.config.js",
     "dev": "webpack-dev-server --config ./build/webpack.dev.config.js"
   },
   "repository": {

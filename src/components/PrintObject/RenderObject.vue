@@ -2,10 +2,10 @@
   <div class="vpo-object">
     <render-key-value v-for="key in Object.keys(printableObject)"
                       :key="key"
-                      :printableKey="key"
-                      :printableValue="printableObject[key]"
-                      :isArray="isArray"
-                      :isLastElement="Object.keys(printableObject).pop() === key"></render-key-value>
+                      :printable-key="key"
+                      :printable-value="printableObject[key]"
+                      :is-array="isArray"
+                      :is-last-element="Object.keys(printableObject).pop() === key"></render-key-value>
   </div>
 </template>
 

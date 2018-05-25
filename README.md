@@ -70,7 +70,7 @@ export default {
 Finally use the component:
 
 ```html
-<print-object :printableObject="myObject"></print-object>
+<print-object :printable-object="myObject"></print-object>
 ```
 
 ```javascript
