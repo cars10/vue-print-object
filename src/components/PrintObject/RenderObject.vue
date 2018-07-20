@@ -5,13 +5,14 @@
                       :printable-key="key"
                       :printable-value="printableObject[key]"
                       :is-array="isArray"
-                      :is-last-element="Object.keys(printableObject).pop() === key"></render-key-value>
+                      :is-last-element="Object.keys(printableObject).pop() === key"
+                      :initial-collapsed="initialCollapsed"></render-key-value>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['printableObject', 'isArray'],
+    props: ['printableObject', 'isArray', 'initialCollapsed'],
     components: {
       RenderKeyValue: () => import('./RenderKeyValue.js')
     }

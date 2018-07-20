@@ -4,7 +4,7 @@ import RenderObject from './RenderObject.vue'
 import RenderBracket from './RenderBracket.vue'
 
 export default {
-  props: ['printableKey', 'printableValue', 'isArray', 'isLastElement'],
+  props: ['printableKey', 'printableValue', 'isArray', 'isLastElement', 'initialCollapsed', 'isRoot'],
   data: () => {
     return {
       objectCollapsed: false,
@@ -17,6 +17,18 @@ export default {
     RenderObject,
     RenderBracket
   },
+  computed: {
+    isInitialCollapsed () {
+      const type = typeof this.initialCollapsed
+      if (type === 'boolean') {
+        return !!this.initialCollapsed
+      } else if ((type === 'object') && Array.isArray(this.initialCollapsed)) {
+        return this.initialCollapsed.includes(this.printableKey)
+      } else {
+        console.warn('initialCollapsed needs to be either boolean or array, your are setting: ' + type)
+      }
+    }
+  },
   methods: {
     collapse () {
       this.objectCollapsed = !this.objectCollapsed
@@ -27,6 +39,9 @@ export default {
     mouseleave () {
       this.keyHover = false
     }
+  },
+  mounted () {
+    this.objectCollapsed = this.isInitialCollapsed
   },
   render: function (createElement) {
     let valueIsObject = typeof this.printableValue === 'object' && this.printableValue !== null
@@ -49,14 +64,15 @@ export default {
       const isArray = Array.isArray(this.printableValue)
 
       children.push(createElement('render-bracket', {props: {isArray: isArray, isOpeningBracket: true}}))
-      if (this.objectCollapsed) {
+      if (this.objectCollapsed && !this.isRoot) {
         children.push(createElement('span', '...'))
       } else {
         if (Object.keys(this.printableValue).length > 0)
           children.push(createElement('render-object', {
             props: {
               printableObject: this.printableValue,
-              isArray: isArray
+              isArray: isArray,
+              initialCollapsed: this.initialCollapsed
             }
           }))
       }

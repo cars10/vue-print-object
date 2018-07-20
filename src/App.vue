@@ -1,13 +1,30 @@
 <template>
   <div>
-    <print-object :printableObject="myObject"></print-object>
+    <div class="col">
+      <h2>Uncollapsed</h2>
+      <print-object :printableObject="myObject"></print-object>
+    </div>
+    <div class="col">
+      <h2>All collapsed</h2>
+      <print-object :printableObject="myObject" initialCollapsed></print-object>
+    </div>
+    <div class="col">
+      <h2>Only 'e' and 'c' collapsed</h2>
+      <print-object :printableObject="myObject" :initialCollapsed="['e', 'c']"></print-object>
+    </div>
   </div>
 </template>
 
 <style>
-* {
-  font-family: monospace;
-}
+  * {
+    font-family: monospace;
+  }
+
+  .col {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+  }
 </style>
 
 <script>
@@ -20,9 +37,12 @@
           a: 1,
           b: "hello",
           c: {
-            d: [3, 4]
+            d: [3, 4],
+            e: {
+              f: "test"
+            }
           },
-          e: false
+          g: false
         }
       }
     },
