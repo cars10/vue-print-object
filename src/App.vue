@@ -9,8 +9,8 @@
       <print-object :printableObject="myObject" initialCollapsed></print-object>
     </div>
     <div class="col">
-      <h2>Only 'e' and 'c' collapsed</h2>
-      <print-object :printableObject="myObject" :initialCollapsed="['e', 'c']"></print-object>
+      <h2>Only 'c' and 'e' collapsed</h2>
+      <print-object :printableObject="myObject" :initialCollapsed="['c', 'e']"></print-object>
     </div>
   </div>
 </template>

@@ -89,6 +89,77 @@ export default {
 ```
 [Codepen](https://codepen.io/cars10/pen/yjWdQv)
 
+
+### Options
+
+| name              | type          | description                       |
+|-------------------|---------------|-----------------------------------|
+| printable-object  | Object        | The object that you want to print |
+| initial-collapsed | Boolean|Array |                                   |
+
+
+## Examples
+
+Basic example
+
+```html
+<print-object :printable-object="myObject"></print-object>
+```
+
+```javascript
+export default {
+  data: () => {
+    myObject: {
+      a: 1
+    }
+  }
+}
+```
+
+Collapse all keys by default
+
+```html
+<print-object :printable-object="myObject" initial-collapsed></print-object>
+```
+
+```javascript
+export default {
+  data: () => {
+    myObject: {
+      a: 1,
+      b: {
+        c: 2
+      },
+      d: {
+        e: 3
+      }
+    }
+  }
+}
+```
+
+Collapse specific keys by default
+
+```html
+<print-object :printable-object="myObject" :initial-collapsed="['b']"></print-object>
+```
+
+```javascript
+export default {
+  data: () => {
+    myObject: {
+      a: 1,
+      b: {
+        c: 2
+      },
+      d: {
+        e: 3
+      }
+    }
+  }
+}
+```
+
 ## License
 
 MIT
