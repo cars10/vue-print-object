@@ -10,6 +10,7 @@
 <style>
   .vpo-wrapper {
     display: inline-block;
+    font-family: monospace;
   }
 
   .vpo-object {
