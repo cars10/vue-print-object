@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+* fix readme and documentation
+
 ## 0.1.0
 
 * adds `initial-collapsed` option to collapse all or only specific keys by default. thanks @sinanerdem

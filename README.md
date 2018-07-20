@@ -94,8 +94,8 @@ export default {
 
 | name              | type          | description                       |
 |-------------------|---------------|-----------------------------------|
-| printable-object  | Object        | The object that you want to print |
-| initial-collapsed | Boolean|Array |                                   |
+| printable-object  | `Object`        | The object that you want to print |
+| initial-collapsed | `Boolean` or `Array` | Set to `true` to collapse all keys by default. Set an array of strings to collapse only specific keys.                                  |
 
 
 ## Examples
