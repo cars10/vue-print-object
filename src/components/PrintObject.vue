@@ -60,7 +60,7 @@
         default: () => {
           return {}
         },
-        type: Object
+        type: [Object, Array]
       },
       initialCollapsed: {
         default: false,

@@ -32,6 +32,7 @@ export default {
   methods: {
     collapse () {
       this.objectCollapsed = !this.objectCollapsed
+      this.keyHover = false
     },
     mouseenter () {
       this.keyHover = true
@@ -63,9 +64,22 @@ export default {
     if (valueIsObject) {
       const isArray = Array.isArray(this.printableValue)
 
-      children.push(createElement('render-bracket', {props: {isArray: isArray, isOpeningBracket: true}}))
-      if (this.objectCollapsed && !this.isRoot) {
-        children.push(createElement('span', '...'))
+      children.push(createElement('render-bracket', {
+        props: {isArray: isArray, isOpeningBracket: true},
+        nativeOn: {
+          click: this.collapse,
+          mouseenter: this.mouseenter,
+          mouseleave: this.mouseleave
+        }
+      }))
+      if (this.objectCollapsed) {
+        children.push(createElement('span', {
+          on: {
+            click: this.collapse,
+            mouseenter: this.mouseenter,
+            mouseleave: this.mouseleave
+          }
+        }, '...'))
       } else {
         if (Object.keys(this.printableValue).length > 0)
           children.push(createElement('render-object', {
@@ -76,7 +90,14 @@ export default {
             }
           }))
       }
-      children.push(createElement('render-bracket', {props: {isArray: isArray, isLastElement: this.isLastElement}}))
+      children.push(createElement('render-bracket', {
+        props: {isArray: isArray, isLastElement: this.isLastElement},
+        nativeOn: {
+          click: this.collapse,
+          mouseenter: this.mouseenter,
+          mouseleave: this.mouseleave
+        }
+      }))
     } else {
       children.push(createElement('render-value', {
         props: {
