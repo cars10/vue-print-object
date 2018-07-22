@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+* adds missing dist for 0.1.2
+
 ## 0.1.2
 
 * fix #2 - can collapse objects inside of arrays
