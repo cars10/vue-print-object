@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+* fix #2 - can collapse objects inside of arrays
+
 ## 0.1.1
 
 * fix readme and documentation

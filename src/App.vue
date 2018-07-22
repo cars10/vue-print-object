@@ -16,10 +16,6 @@
 </template>
 
 <style>
-  * {
-    font-family: monospace;
-  }
-
   .col {
     display: inline-block;
     vertical-align: top;

@@ -10,6 +10,7 @@
 <style>
   .vpo-wrapper {
     display: inline-block;
+    font-family: monospace;
   }
 
   .vpo-object {
@@ -59,7 +60,7 @@
         default: () => {
           return {}
         },
-        type: Object
+        type: [Object, Array]
       },
       initialCollapsed: {
         default: false,
