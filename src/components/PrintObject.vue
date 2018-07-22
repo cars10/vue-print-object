@@ -2,8 +2,7 @@
   <div class="vpo-wrapper">
     <render-key-value :printable-value="printableObject"
                       :is-last-element="true"
-                      :initial-collapsed="initialCollapsed"
-                      :is-root="true"></render-key-value>
+                      :initial-collapsed="initialCollapsed"></render-key-value>
   </div>
 </template>
 

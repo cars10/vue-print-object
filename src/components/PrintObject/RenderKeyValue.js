@@ -4,7 +4,7 @@ import RenderObject from './RenderObject.vue'
 import RenderBracket from './RenderBracket.vue'
 
 export default {
-  props: ['printableKey', 'printableValue', 'isArray', 'isLastElement', 'initialCollapsed', 'isRoot'],
+  props: ['printableKey', 'printableValue', 'isArray', 'isLastElement', 'initialCollapsed'],
   data: () => {
     return {
       objectCollapsed: false,
