@@ -579,7 +579,7 @@ exports.default = {
       default: function _default() {
         return {};
       },
-      type: Object
+      type: [Object, Array]
     },
     initialCollapsed: {
       default: false,
@@ -629,7 +629,7 @@ var _RenderBracket2 = _interopRequireDefault(_RenderBracket);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-  props: ['printableKey', 'printableValue', 'isArray', 'isLastElement', 'initialCollapsed', 'isRoot'],
+  props: ['printableKey', 'printableValue', 'isArray', 'isLastElement', 'initialCollapsed'],
   data: function data() {
     return {
       objectCollapsed: false,
@@ -657,6 +657,7 @@ exports.default = {
   methods: {
     collapse: function collapse() {
       this.objectCollapsed = !this.objectCollapsed;
+      this.keyHover = false;
     },
     mouseenter: function mouseenter() {
       this.keyHover = true;
@@ -688,9 +689,22 @@ exports.default = {
     if (valueIsObject) {
       var isArray = Array.isArray(this.printableValue);
 
-      children.push(createElement('render-bracket', { props: { isArray: isArray, isOpeningBracket: true } }));
-      if (this.objectCollapsed && !this.isRoot) {
-        children.push(createElement('span', '...'));
+      children.push(createElement('render-bracket', {
+        props: { isArray: isArray, isOpeningBracket: true },
+        nativeOn: {
+          click: this.collapse,
+          mouseenter: this.mouseenter,
+          mouseleave: this.mouseleave
+        }
+      }));
+      if (this.objectCollapsed) {
+        children.push(createElement('span', {
+          on: {
+            click: this.collapse,
+            mouseenter: this.mouseenter,
+            mouseleave: this.mouseleave
+          }
+        }, '...'));
       } else {
         if ((0, _keys2.default)(this.printableValue).length > 0) children.push(createElement('render-object', {
           props: {
@@ -700,7 +714,14 @@ exports.default = {
           }
         }));
       }
-      children.push(createElement('render-bracket', { props: { isArray: isArray, isLastElement: this.isLastElement } }));
+      children.push(createElement('render-bracket', {
+        props: { isArray: isArray, isLastElement: this.isLastElement },
+        nativeOn: {
+          click: this.collapse,
+          mouseenter: this.mouseenter,
+          mouseleave: this.mouseleave
+        }
+      }));
     } else {
       children.push(createElement('render-value', {
         props: {
@@ -1081,7 +1102,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_PrintObject_vue__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_PrintObject_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_PrintObject_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_PrintObject_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_PrintObject_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_86c216ba_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_PrintObject_vue__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_41341f46_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_PrintObject_vue__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(10);
 function injectStyle (context) {
   __webpack_require__(46)
@@ -1102,8 +1123,8 @@ var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_PrintObject_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_86c216ba_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_PrintObject_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_86c216ba_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_PrintObject_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_41341f46_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_PrintObject_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_41341f46_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_PrintObject_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -2095,7 +2116,7 @@ var staticRenderFns = []
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vpo-wrapper"},[_c('render-key-value',{attrs:{"printable-value":_vm.printableObject,"is-last-element":true,"initial-collapsed":_vm.initialCollapsed,"is-root":true}})],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vpo-wrapper"},[_c('render-key-value',{attrs:{"printable-value":_vm.printableObject,"is-last-element":true,"initial-collapsed":_vm.initialCollapsed}})],1)}
 var staticRenderFns = []
 
 
